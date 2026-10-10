@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>K-TET Social Science Category III – Set 3 | Questions 71–150</title>
+  <style>
+  /* Base Reset & Mobile-First Variables */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Blue Theme Colors with Yellow Accent */
+    --primary-color: #1E40AF; /* Dark Blue */
+    --primary-light: #E0E7FF; /* Light Blue BG */
+    --primary-dark: #1E3A8A;  /* Extra Dark Blue */
+    --accent-color: #FDE047;   /* Yellow Accent */
+    --success-color: #1D9E75;
+    --success-bg: #EAF3DE;
+    --error-color: #E24B4A;
+    --error-bg: #FCEBEB;
+    --text-main: #2D3748;
+    --text-muted: #718096;
+    --border-color: #E2E8F0;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, #334155 100%);
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #app {
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Sticky Header/Top Bar Card with Yellow highlights */
+  .top-bar {
+    background: var(--primary-color);
+    border: 2px solid var(--accent-color); /* Added Yellow Border */
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+  }
+
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .header-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .header-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 70%;
+  }
+
+  /* WhatsApp Actions in Banner */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.1s ease;
+  }
+
+  .whatsapp-btn:active {
+    transform: scale(0.95);
+  }
+
+  .profile-pic {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color); /* Yellow border around photo */
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+  }
+
+  .quiz-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-color); /* Title changed to Yellow */
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .quiz-subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    color: #93C5FD;
+    margin-top: 1px;
+  }
+
+  .q-badge {
+    background: #3B82F6;
+    color: #EFF6FF;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .timer-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-dark);
+    border-radius: 20px;
+    padding: 4px 12px;
+    border: 1px solid rgba(253, 224, 71, 0.3); /* Subtle yellow around timer */
+  }
+
+  .timer-label {
+    font-size: 10px;
+    color: #93C5FD;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .timer-txt {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .timer-txt.red {
+    color: #F87171;
+    animation: pulse 1s infinite alternate;
+  }
+
+  @keyframes pulse {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+  }
+
+  /* Question Card Wrapper */
+  .q-container {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+
+  .q-num {
+    font-size: 11px;
+    color: var(--primary-color);
+    font-weight: 600;
+    background: var(--primary-light);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .q-text-ml { font-size: 14px; font-weight: 600; color: #374151; line-height: 1.5; margin: -6px 0 14px; }
+
+  .q-text-en {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E3A8A; /* Navy blue color for English */
+    line-height: 1.4;
+    word-break: break-word;
+    margin-bottom: 14px;
+  }
+
+  /* Options Layout */
+  .opts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    background: #fff;
+    transition: all 0.15s ease;
+    min-height: 48px;
+  }
+
+  .opt-key {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .opt-key.A { background: #E6F1FB; color: #0C447C; }
+  .opt-key.B { background: #FAEEDA; color: #633806; }
+  .opt-key.C { background: #FBEAF0; color: #72243E; }
+  .opt-key.D { background: #EAF3DE; color: #27500A; }
+
+  .opt-txt {
+    font-size: 13.5px;
+    color: var(--text-main);
+    font-weight: 500;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  /* Selection States */
+  .opt.unanswered:active {
+    background: var(--primary-light);
+    border-color: #60A5FA;
+  }
+
+  .opt.correct-ans {
+    border-color: var(--success-color);
+    background: var(--success-bg);
+    pointer-events: none;
+  }
+  .opt.correct-ans .opt-key {
+    background: var(--success-color);
+    color: #fff;
+  }
+  .opt.correct-ans .opt-txt {
+    color: #085041;
+    font-weight: 600;
+  }
+
+  .opt.wrong-ans {
+    border-color: var(--error-color);
+    background: var(--error-bg);
+    pointer-events: none;
+  }
+  .opt.wrong-ans .opt-key {
+    background: var(--error-color);
+    color: #fff;
+  }
+  .opt.wrong-ans .opt-txt {
+    color: #791F1F;
+  }
+
+  .opt.neutral-locked {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* Explanations block */
+  .exp-box {
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    box-shadow: inset 2px 0 0px rgba(0,0,0,0.1);
+    word-break: break-word;
+  }
+
+  .exp-box.correct {
+    background: var(--success-bg);
+    border: 1px solid #5DCAA5;
+    color: #085041;
+  }
+
+  .exp-box.wrong {
+    background: var(--error-bg);
+    border: 1px solid #F09595;
+    color: #791F1F;
+  }
+
+  .exp-label {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  /* Bottom Submit Button Container */
+  .action-container {
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+
+  .btn-submit-all {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #2563EB;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+  }
+
+  .btn-submit-all:active {
+    transform: scale(0.99);
+  }
+
+  /* Result Dashboards */
+  .result-top {
+    background: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 24px 14px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+
+  .score-ring {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+
+  .score-big {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .score-sub {
+    font-size: 12px;
+    color: var(--accent-color);
+    margin-top: 2px;
+  }
+
+  .result-label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--accent-color);
+  }
+
+  .result-sub {
+    font-size: 13px;
+    color: #93C5FD;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .stat-c {
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+
+  .stat-c.green { background: var(--success-bg); }
+  .stat-c.red { background: var(--error-bg); }
+  .stat-c.gray { background: #EDF2F7; }
+
+  .stat-n {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .stat-c.green .stat-n { color: var(--success-color); }
+  .stat-c.red .stat-n { color: var(--error-color); }
+  .stat-c.gray .stat-n { color: var(--text-main); }
+
+  .stat-l {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  /* Review Cards Section */
+  .review-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 16px 0 8px;
+    padding-left: 2px;
+  }
+
+  .r-card {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 14px;
+    margin-bottom: 10px;
+    background: #fff;
+    word-break: break-word;
+  }
+
+  .r-card.rc { border-left: 4px solid var(--success-color); }
+  .r-card.rw { border-left: 4px solid var(--error-color); }
+  .r-card.rs { border-left: 4px solid var(--text-muted); }
+
+  .r-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .r-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .r-badge.rc { background: var(--success-bg); color: #27500A; }
+  .r-badge.rw { background: var(--error-bg); color: #791F1F; }
+  .r-badge.rs { background: #EDF2F7; color: var(--text-muted); }
+
+  .r-head {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .r-qtxt-en {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1E3A8A;
+    line-height: 1.45;
+    margin-bottom: 4px;
+  }
+
+  .r-ans {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .r-ans.correct { background: var(--success-bg); color: #085041; }
+  .r-ans.wrong { background: var(--error-bg); color: #791F1F; }
+
+  .r-exp {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    border-top: 1px solid var(--border-color);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+
+  .restart-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  /* Specific Adjustments for smaller screens */
+  @media(max-width: 400px) {
+    .quiz-title { font-size: 13px; }
+    .quiz-subtitle { font-size: 10px; }
+    .whatsapp-btn { font-size: 10px; padding: 5px 8px; }
+    .profile-pic { width: 36px; height: 36px; }
+    .header-text-block { max-width: 65%; }
+  }
+
+  @media(max-width: 350px) {
+    .quiz-title { font-size: 11px; }
+    .quiz-subtitle { font-size: 9px; }
+    .timer-txt { font-size: 14px; }
+    .opt-txt { font-size: 12.5px; }
+    .whatsapp-btn { font-size: 9px; padding: 4px 6px; }
+  }
+  </style>
+<base target="_blank">
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+<div id="app">
+  <div id="view"></div>
+</div>
+
+<script>
+// Short celebratory sound for correct answers (works without an external audio file)
+function playCorrectSound(){
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    const ctx = new AudioContextClass();
+    const now = ctx.currentTime;
+    // Two bright notes to give a clear, pleasant correct-answer chime.
+    [880, 1175].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, now + i * 0.12);
+      gain.gain.setValueAtTime(0.0001, now + i * 0.12);
+      gain.gain.exponentialRampToValueAtTime(0.16, now + i * 0.12 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.12 + 0.22);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now + i * 0.12);
+      osc.stop(now + i * 0.12 + 0.24);
+    });
+    setTimeout(() => ctx.close(), 700);
+  } catch (e) { console.log('Correct-answer sound unavailable:', e); }
+}
+
+// CLASS X SOCIAL SCIENCE: MONEY AND ECONOMIC ACTIVITIES MOCK TEST
+const Q = [{"q_en":"Name the author of the book Humayun Nama.","q_ml":"ഹുമയൂൺ നാമ എന്ന പുസ്തകത്തിന്റെ രചയിതാവ് ആര്?","o":["Abul Fazl","Gulbadan Begum","Abdul Hamid Lahori","Jahanara"],"a":1,"e":"മുഗൾ ചക്രവർത്തിയായ ഹുമയൂണിന്റെ സഹോദരി ഗുൽബദൻ ബീഗമാണ് ഹുമയൂൺ നാമ രചിച്ചത്."},{"q_en":"Budget deficit means:","q_ml":"ബജറ്റ് കമ്മി എന്നതുകൊണ്ട് അർത്ഥമാക്കുന്നത് എന്താണ്?","o":["Revenue greater than expenditure","Revenue less than expenditure","Revenue equals expenditure","None of these"],"a":1,"e":"വരുമാനത്തേക്കാൾ ചെലവ് കൂടുതലാകുമ്പോഴാണ് ബജറ്റ് കമ്മി ഉണ്ടാകുന്നത്."},{"q_en":"The phenomenon of severe ejection of water from within the earth at regular intervals is known as:","q_ml":"നിശ്ചിത ഇടവേളകളിൽ ഭൂമിക്കുള്ളിൽനിന്ന് വെള്ളം ശക്തിയായി പുറത്തേക്ക് തെറിക്കുന്ന പ്രതിഭാസം അറിയപ്പെടുന്നത് എന്ത്?","o":["Springs","Geysers","Artesian Well","Aquifers"],"a":1,"e":"ഭൂമിക്കടിയിലെ ചൂടിന്റെ ഫലമായി ചൂടുവെള്ളവും നീരാവിയും ഇടവേളകളിൽ ശക്തിയായി പുറത്തേക്ക് തെറിക്കുന്ന പ്രകൃതിദത്ത ഉറവകളാണ് ഗെയ്‌സറുകൾ."},{"q_en":"Among the following statements, choose the right choice.","q_ml":"താഴെപ്പറയുന്ന പ്രസ്താവനകളിൽ ശരിയായവ തിരഞ്ഞെടുക്കുക.","o":["(i), (ii), (iii)","(i), (iii), (iv)","(ii), (iii), (iv)","(i), (ii), (iii), (iv)"],"a":3,"e":"നൽകിയിരിക്കുന്ന ഉത്തരസൂചിക പ്രകാരം നാല് പ്രസ്താവനകളും ശരിയാണ്. മലയാളി മെമ്മോറിയൽ 1891-ൽ സമർപ്പിച്ചു; ഒറ്റപ്പാലത്ത് 1921-ൽ അഖില കേരള രാഷ്ട്രീയ സമ്മേളനം നടന്നു; തിരുവിതാംകൂറിൽ 1936 നവംബറിൽ ക്ഷേത്രപ്രവേശന വിളംബരം പുറപ്പെടുവിച്ചു."},{"q_en":"“Formed by the solidification of molten rock.” Identify the rock type.","q_ml":"ഉരുകിയ ശിലാദ്രവം തണുത്തുറഞ്ഞ് രൂപംകൊള്ളുന്ന ശിലാവിഭാഗം ഏതാണ്?","o":["Metamorphic rocks","Sedimentary rocks","Stratified rocks","Igneous rocks"],"a":3,"e":"മാഗ്മയോ ലാവയോ തണുത്തുറഞ്ഞ് രൂപംകൊള്ളുന്ന ശിലകളാണ് ആഗ്നേയശിലകൾ."},{"q_en":"Which of the following statements about the State Human Rights Commission is NOT correct?","q_ml":"സംസ്ഥാന മനുഷ്യാവകാശ കമ്മീഷനെക്കുറിച്ചുള്ള താഴെപ്പറയുന്ന പ്രസ്താവനകളിൽ തെറ്റായത് ഏതാണ്?","o":["The 2006 Amendment reduced the number of members from five to three.","A member is eligible for re-appointment for another term of five years, subject to the age limit of 70 years.","The chairperson should be a retired Chief Justice of a High Court.","The chairperson and members are appointed by the President of India."],"a":3,"e":"സംസ്ഥാന മനുഷ്യാവകാശ കമ്മീഷന്റെ ചെയർപേഴ്സണെയും അംഗങ്ങളെയും നിയമിക്കുന്നത് രാഷ്ട്രപതിയല്ല, സംസ്ഥാന ഗവർണറാണ്."},{"q_en":"Which of the following is the headquarters of the World Trade Organization?","q_ml":"ലോക വ്യാപാര സംഘടനയുടെ ആസ്ഥാനം എവിടെയാണ്?","o":["Washington","Paris","Geneva","New York"],"a":2,"e":"ലോക വ്യാപാര സംഘടനയുടെ (WTO) ആസ്ഥാനം സ്വിറ്റ്സർലൻഡിലെ ജനീവയിലാണ്."},{"q_en":"‘Ur’ was an important city in:","q_ml":"‘ഊർ’ ഏത് പുരാതന നാഗരികതയിലെ പ്രധാന നഗരമായിരുന്നു?","o":["Egypt","Greece","Rome","Mesopotamia"],"a":3,"e":"പുരാതന മെസൊപ്പൊട്ടേമിയയിലെ പ്രധാന സുമേറിയൻ നഗരമായിരുന്നു ഊർ."},{"q_en":"Match the following writs with their purposes.","q_ml":"റിട്ടുകളും അവയുടെ ഉദ്ദേശ്യങ്ങളും ശരിയായി യോജിപ്പിക്കുക.","o":["(a), (b), (c), (d)","(c), (d), (b), (a)","(d), (c), (a), (b)","(d), (a), (c), (b)"],"a":2,"e":"- Habeas Corpus — തടവിലാക്കിയ വ്യക്തിയെ കോടതിയിൽ ഹാജരാക്കാൻ. - Mandamus — നിയമപരമായ ചുമതല നിർവഹിക്കാൻ നിർദേശിക്കാൻ. - Certiorari — കീഴ്ക്കോടതിയുടെ ഉത്തരവ് പരിശോധിക്കാനോ റദ്ദാക്കാനോ മേൽക്കോടതിക്ക് അധികാരം നൽകുന്ന റിട്ട്. - Quo Warranto — ഒരാൾ ഏത് അധികാരത്തിന്റെ അടിസ്ഥാനത്തിലാണ് പൊതുപദവി വഹിക്കുന്നതെന്ന് ചോദ്യം ചെയ്യാൻ."},{"q_en":"According to which Article are the chairman and members of the Public Service Commission appointed?","q_ml":"പബ്ലിക് സർവീസ് കമ്മീഷന്റെ ചെയർമാനെയും അംഗങ്ങളെയും നിയമിക്കുന്നതിനെക്കുറിച്ച് പ്രതിപാദിക്കുന്ന ഭരണഘടനാ അനുച്ഛേദം ഏതാണ്?","o":["Article 151","Article 315","Article 323","Article 316"],"a":3,"e":"ഭരണഘടനയുടെ അനുച്ഛേദം 316 പബ്ലിക് സർവീസ് കമ്മീഷനിലെ ചെയർമാന്റെയും അംഗങ്ങളുടെയും നിയമനത്തെക്കുറിച്ച് പ്രതിപാദിക്കുന്നു."},{"q_en":"Who defined history as “an unending dialogue between the present and the past”?","q_ml":"“വർത്തമാനവും ഭൂതകാലവും തമ്മിലുള്ള അവസാനിക്കാത്ത സംഭാഷണമാണ് ചരിത്രം” എന്ന് നിർവചിച്ചത് ആര്?","o":["Will Durant","E. H. Carr","Arnold Toynbee","Carlyle"],"a":1,"e":"ചരിത്രത്തെ വർത്തമാനവും ഭൂതകാലവും തമ്മിലുള്ള നിരന്തര സംഭാഷണമായി വിശേഷിപ്പിച്ചത് ഇ. എച്ച്. കാർ ആണ്. അദ്ദേഹത്തിന്റെ What Is History? എന്ന കൃതിയുമായി ഈ നിർവചനം ബന്ധപ്പെട്ടിരിക്കുന്നു."},{"q_en":"Which one of the following is NOT a variable of the Human Development Index?","q_ml":"മാനവ വികസന സൂചികയുടെ (HDI) ഘടകങ്ങളിൽ ഉൾപ്പെടാത്തത് ഏതാണ്?","o":["Longevity","Education","GDP Per Capita","Population"],"a":3,"e":"മാനവ വികസന സൂചികയുടെ പ്രധാന ഘടകങ്ങൾ ആയുർദൈർഘ്യം, വിദ്യാഭ്യാസം, പ്രതിശീർഷ വരുമാനം എന്നിവയാണ്. ജനസംഖ്യ നേരിട്ട് ഇതിലെ ഒരു ഘടകമല്ല."},{"q_en":"Match the following and choose the correct combination.","q_ml":"താഴെക്കൊടുത്തിരിക്കുന്നവ ശരിയായി യോജിപ്പിക്കുക.","o":["(i), (iv), (ii), (iii)","(ii), (iii), (i), (iv)","(iv), (ii), (iii), (i)","(iii), (iv), (i), (ii)"],"a":3,"e":"ആന്തരിക ബലങ്ങൾ ഫലകചലനങ്ങളുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു. ഭൂകമ്പം രേഖപ്പെടുത്തുന്നത് സീസ്മോഗ്രാഫാണ്. അഗ്നിപർവത പ്രവർത്തനങ്ങൾക്ക് പേരുകേട്ട മേഖലയാണ് പസഫിക് റിംഗ് ഓഫ് ഫയർ. സുനാമി വലിയ സമുദ്രതിരമാലകളാണ്; ചോദ്യത്തിലെ ഓപ്ഷനിൽ അവയെ തുറമുഖ തിരമാലകൾ എന്നു നൽകിയിരിക്കുന്നു."},{"q_en":"Identify the large-scale map from the following.","q_ml":"താഴെപ്പറയുന്നവയിൽ വലിയ തോതിലുള്ള ഭൂപടം ഏതാണ്?","o":["Atlas map","Cadastral map","Political map","Wall map"],"a":1,"e":"ഭൂമിയുടെ അതിരുകൾ, ഭൂവിസ്തൃതി, കെട്ടിടങ്ങൾ തുടങ്ങിയവ വിശദമായി കാണിക്കുന്ന വലിയ തോതിലുള്ള ഭൂപടമാണ് കാഡസ്ട്രൽ മാപ്പ്."},{"q_en":"Normal Lapse Rate means:","q_ml":"സാധാരണ താപനഷ്ട നിരക്ക് (Normal Lapse Rate) എന്നതിന്റെ അർത്ഥം എന്താണ്?","o":["Temperature decreases at a uniform rate of 2°C for every 165 metres of altitude.","Temperature increases at a uniform rate of 1°C for every 165 metres of altitude.","Temperature increases at a uniform rate of 2°C for every 165 metres of altitude.","Temperature decreases at a uniform rate of 1°C for every 165 metres of altitude."],"a":3,"e":"ഈ ചോദ്യത്തിലെ ഉത്തരസൂചിക പ്രകാരം ഉയരം ഓരോ 165 മീറ്റർ കൂടുമ്പോഴും താപനില 1°C കുറയുന്നതാണ് സാധാരണ താപനഷ്ട നിരക്ക്. പൊതുവായി ഉപയോഗിക്കുന്ന ശരാശരി പരിസ്ഥിതി താപനഷ്ട നിരക്ക് ഏകദേശം 6.5°C ഓരോ കിലോമീറ്ററിനുമാണ്."},{"q_en":"Most of the working population in India is engaged in:","q_ml":"ഇന്ത്യയിലെ തൊഴിൽ ചെയ്യുന്ന ജനസംഖ്യയിൽ ഭൂരിഭാഗവും ഏത് മേഖലയിലാണ് പ്രവർത്തിക്കുന്നത്?","o":["Manufacturing sector","Agriculture and allied sector","Communication sector","Banking sector"],"a":1,"e":"കാർഷികവും അനുബന്ധവുമായ മേഖലകൾ ഇന്ത്യയിലെ വലിയൊരു വിഭാഗം ജനങ്ങൾക്ക് തൊഴിൽ നൽകുന്നു."},{"q_en":"The winds that blow continuously towards the equatorial low-pressure belt are:","q_ml":"മധ്യരേഖാ ന്യൂനമർദ്ദ മേഖലയിലേക്ക് നിരന്തരമായി വീശുന്ന കാറ്റുകൾ ഏവയാണ്?","o":["Monsoon winds","Polar winds","Trade winds","Periodic winds"],"a":2,"e":"ഉപോഷ്ണമേഖലാ ഉയർന്ന മർദ്ദമേഖലകളിൽനിന്ന് മധ്യരേഖാ ന്യൂനമർദ്ദ മേഖലയിലേക്ക് വീശുന്ന സ്ഥിരവാതങ്ങളാണ് വാണിജ്യവാതങ്ങൾ."},{"q_en":"Which country declared the Open Door Policy in China?","q_ml":"ചൈനയിൽ തുറന്ന വാതിൽ നയം പ്രഖ്യാപിച്ച രാജ്യം ഏതാണ്?","o":["America","England","France","Japan"],"a":0,"e":"ചൈനയിൽ എല്ലാ രാജ്യങ്ങൾക്കും തുല്യ വ്യാപാരാവസരങ്ങൾ ലഭിക്കണമെന്ന ആശയവുമായി 1899-ൽ അമേരിക്കയുടെ സ്റ്റേറ്റ് സെക്രട്ടറി ജോൺ ഹേയ് തുറന്ന വാതിൽ നയം മുന്നോട്ടുവച്ചു."},{"q_en":"Which of the following is NOT a necessary principle of liberal democracy?","q_ml":"ലിബറൽ ജനാധിപത്യത്തിന്റെ അനിവാര്യ തത്ത്വങ്ങളിൽ ഉൾപ്പെടാത്തത് ഏതാണ്?","o":["Government of Consent","Majority Rule","Collective Responsibility","Constitutional Government"],"a":2,"e":"കൂട്ടുത്തരവാദിത്തം പാർലമെന്ററി മന്ത്രിസഭാ ഭരണത്തിന്റെ പ്രധാന തത്ത്വമാണ്. നൽകിയിരിക്കുന്ന ചോദ്യത്തിന്റെ ഉത്തരസൂചികയിൽ ഇത് ലിബറൽ ജനാധിപത്യത്തിന്റെ പൊതുവായ അനിവാര്യ തത്ത്വമായി കണക്കാക്കിയിട്ടില്ല."},{"q_en":"The Soviet Union formally ceased to exist in:","q_ml":"സോവിയറ്റ് യൂണിയൻ ഔദ്യോഗികമായി ഇല്ലാതായത് ഏത് വർഷമാണ്?","o":["1990","1989","1991","1992"],"a":2,"e":"1991 ഡിസംബറിൽ സോവിയറ്റ് യൂണിയൻ ഔദ്യോഗികമായി പിരിച്ചുവിടപ്പെട്ടു."},{"q_en":"In which year did the Paris Conference meet to discuss Woodrow Wilson’s “Fourteen Points” programme?","q_ml":"വുഡ്രോ വിൽസന്റെ “പതിനാല് നിർദ്ദേശങ്ങൾ” ചർച്ച ചെയ്യാൻ പാരീസ് സമാധാന സമ്മേളനം ചേർന്നത് ഏത് വർഷമാണ്?","o":["1909","1919","1908","1918"],"a":1,"e":"ഒന്നാം ലോകമഹായുദ്ധത്തിനുശേഷം 1919-ലാണ് പാരീസ് സമാധാന സമ്മേളനം നടന്നത്."},{"q_en":"According to the Sangam poems, the Marutam land is:","q_ml":"സംഘകാല കവിതകൾ പ്രകാരം മരുതം എന്ന തിണ ഏത് ഭൂപ്രദേശത്തെയാണ് സൂചിപ്പിക്കുന്നത്?","o":["Pastoral land","Wet plain","Coastal zone","Forest region"],"a":1,"e":"കൃഷിയുമായി ബന്ധപ്പെട്ട ഫലഭൂയിഷ്ഠമായ വയൽപ്രദേശമാണ് മരുതം."},{"q_en":"Identify the officer who was in charge of local administration in the Delhi Sultanate.","q_ml":"ഡൽഹി സുൽത്താനേറ്റിലെ പ്രാദേശിക ഭരണവുമായി ബന്ധപ്പെട്ട ഉദ്യോഗസ്ഥൻ ആരായിരുന്നു?","o":["Wazir","Wakil","Sadr","Muqaddam"],"a":3,"e":"നൽകിയ ഉത്തരസൂചിക പ്രകാരം ഗ്രാമതലത്തിലുള്ള പ്രാദേശിക ഭരണവുമായി ബന്ധപ്പെട്ട ഉദ്യോഗസ്ഥനായിരുന്നു മുഖദ്ദം."},{"q_en":"The headquarters of WHO is located at:","q_ml":"ലോകാരോഗ്യ സംഘടനയുടെ (WHO) ആസ്ഥാനം എവിടെയാണ്?","o":["Paris","Rome","Geneva","New York"],"a":2,"e":"ലോകാരോഗ്യ സംഘടനയുടെ ആസ്ഥാനം സ്വിറ്റ്സർലൻഡിലെ ജനീവയിലാണ്."},{"q_en":"Whose work is Buddha and the Gospel of Buddhism?","q_ml":"Buddha and the Gospel of Buddhism എന്ന കൃതി ആരുടേതാണ്?","o":["D. D. Basu","Nataraja Guru","B. R. Ambedkar","Ananda Coomaraswamy"],"a":3,"e":"ബുദ്ധമതത്തെയും ബുദ്ധന്റെ ഉപദേശങ്ങളെയും കുറിച്ചുള്ള ഈ കൃതി ആനന്ദ കുമാരസ്വാമിയുടേതാണ്."},{"q_en":"The Sun will be vertically above the Tropic of Cancer on:","q_ml":"സൂര്യൻ ഉത്തരായനരേഖയ്ക്ക് നേരെ മുകളിൽ വരുന്ന ദിവസം ഏതാണ്?","o":["June 21","March 21","September 23","December 22"],"a":0,"e":"ജൂൺ 21-ഓടെയാണ് ഉത്തരായനരേഖയിൽ സൂര്യൻ ലംബമായി പ്രകാശിക്കുന്നത്."},{"q_en":"Which of the following statements regarding the Carnatic Wars are correct?","q_ml":"കർണാടക യുദ്ധങ്ങളെക്കുറിച്ചുള്ള ശരിയായ പ്രസ്താവനകൾ ഏതെല്ലാം?","o":["i, ii, iii","ii, iii, iv","i, iii, iv","i, ii, iii, iv"],"a":0,"e":"ആദ്യത്തെ മൂന്ന് പ്രസ്താവനകളും ശരിയാണ്. നൽകിയിരിക്കുന്ന വിശദീകരണം അനുസരിച്ച് അയർ കൂട്ട് വന്ദിവാശി യുദ്ധത്തിൽ ബ്രിട്ടീഷ് സൈന്യത്തെ നയിച്ചത് മൂന്നാം കർണാടക യുദ്ധത്തിലാണ്."},{"q_en":"Which of the following is a Centrist Party in India?","q_ml":"ഇന്ത്യയിലെ മധ്യപക്ഷ രാഷ്ട്രീയ പാർട്ടി ഏതാണ്?","o":["Indian National Congress","Bharatiya Janata Party","Communist Party of India (Marxist)","Communist Party of India"],"a":0,"e":"ഈ ചോദ്യത്തിലെ ഉത്തരസൂചിക പ്രകാരം ഇന്ത്യൻ നാഷണൽ കോൺഗ്രസിനെയാണ് മധ്യപക്ഷ പാർട്ടിയായി കണക്കാക്കിയിരിക്കുന്നത്."},{"q_en":"Who has the power to form a new State within the Union of India?","q_ml":"ഇന്ത്യൻ യൂണിയനിൽ പുതിയ സംസ്ഥാനം രൂപീകരിക്കാൻ അധികാരമുള്ളത് ആർക്കാണ്?","o":["The President of India","The Cabinet","The Supreme Court","Parliament"],"a":3,"e":"ഇന്ത്യൻ ഭരണഘടനയുടെ അനുച്ഛേദം 3 പ്രകാരം പുതിയ സംസ്ഥാനങ്ങൾ രൂപീകരിക്കാനും സംസ്ഥാനങ്ങളുടെ അതിർത്തികളിൽ മാറ്റം വരുത്താനും പാർലമെന്റിന് അധികാരമുണ്ട്."},{"q_en":"Which Article of the Constitution of India specifically mentions Village Panchayats?","q_ml":"ഗ്രാമപഞ്ചായത്തുകളെക്കുറിച്ച് പ്രത്യേകമായി പരാമർശിക്കുന്ന ഇന്ത്യൻ ഭരണഘടനയുടെ അനുച്ഛേദം ഏതാണ്?","o":["Article 40","Article 45","Article 49","Article 51"],"a":0,"e":"ഭരണഘടനയുടെ അനുച്ഛേദം 40 ഗ്രാമപഞ്ചായത്തുകൾ രൂപീകരിക്കുന്നതിനും അവയ്ക്ക് അധികാരം നൽകുന്നതിനും സംസ്ഥാനത്തോട് നിർദേശിക്കുന്നു."},{"q_en":"Which of the following is NOT related to the effects of tides?","q_ml":"വേലിയേറ്റത്തിന്റെ ഫലങ്ങളുമായി ബന്ധപ്പെട്ടിട്ടില്ലാത്തത് ഏതാണ്?","o":["Tidal energy can be used for power generation.","Influence the climate of coastal region.","Debris dumped along seashores and ports is washed off to the deep sea.","Ships can be brought to shallow harbours during high tides."],"a":1,"e":"നൽകിയിരിക്കുന്ന ഉത്തരസൂചിക പ്രകാരം തീരദേശ കാലാവസ്ഥയെ സ്വാധീനിക്കുന്നത് വേലിയേറ്റത്തിന്റെ പ്രധാന ഫലമായി കണക്കാക്കുന്നില്ല. വേലിയേറ്റ ഊർജം വൈദ്യുതി ഉൽപാദനത്തിനും ഉയർന്ന വേലിയേറ്റ സമയത്ത് കപ്പലുകൾ ആഴം കുറഞ്ഞ തുറമുഖങ്ങളിൽ പ്രവേശിക്കുന്നതിനും സഹായിക്കുന്നു."},{"q_en":"Which one of the following is NOT a method of estimating National Income?","q_ml":"ദേശീയ വരുമാനം കണക്കാക്കുന്നതിനുള്ള രീതികളിൽ ഉൾപ്പെടാത്തത് ഏതാണ്?","o":["Income method","Value added method","Export-Import method","Expenditure method"],"a":2,"e":"ദേശീയ വരുമാനം കണക്കാക്കുന്നതിനുള്ള പ്രധാന രീതികൾ വരുമാന രീതി, മൂല്യവർധിത രീതി, ചെലവ് രീതി എന്നിവയാണ്."},{"q_en":"What are the characteristics of the Indus Valley Civilization?","q_ml":"സിന്ധുനദീതട സംസ്കാരത്തിന്റെ സവിശേഷതകൾ ഏതെല്ലാമാണ്?","o":["i, ii, iii, iv","ii, iii, iv, v","ii, iv, v","i, iii, iv, v"],"a":0,"e":"ആസൂത്രിത നഗരനിർമാണം, മലിനജല നിർഗമന സംവിധാനം, ചുട്ട ഇഷ്ടികകളുടെ ഉപയോഗം, വ്യത്യസ്ത കെട്ടിടരൂപങ്ങൾ, തുറമുഖ നഗരങ്ങൾ എന്നിവ സിന്ധുനദീതട സംസ്കാരത്തിന്റെ സവിശേഷതകളായിരുന്നു. കല കളിമണ്ണിൽ മാത്രം അധിഷ്ഠിതമായിരുന്നില്ല."},{"q_en":"Name the imaginary lines joining places with the same elevation above sea level.","q_ml":"സമുദ്രനിരപ്പിൽനിന്ന് ഒരേ ഉയരത്തിലുള്ള സ്ഥലങ്ങളെ ബന്ധിപ്പിക്കുന്ന സാങ്കൽപ്പിക രേഖകൾ ഏവയാണ്?","o":["Lines of Latitudes","Contour lines","International Date Line","Lines of Longitudes"],"a":1,"e":"സമുദ്രനിരപ്പിൽനിന്ന് ഒരേ ഉയരമുള്ള സ്ഥലങ്ങളെ ബന്ധിപ്പിക്കുന്ന രേഖകളാണ് കോണ്ടൂർ രേഖകൾ."},{"q_en":"Which of the following statements are correct?","q_ml":"താഴെപ്പറയുന്ന പ്രസ്താവനകളിൽ ശരിയായവ ഏതെല്ലാമാണ്?","o":["i, iii, iv","i, ii, iv","i, ii, iii","ii, iii, iv"],"a":0,"e":"നൽകിയിരിക്കുന്ന ഉത്തരസൂചിക പ്രകാരം ഒന്നാമത്തെയും മൂന്നാമത്തെയും നാലാമത്തെയും പ്രസ്താവനകൾ ശരിയാണ്. യന്ത്രവൽക്കരണത്തിനെതിരായ തൊഴിലാളികളുടെ പ്രതിഷേധവുമായി ലുഡൈറ്റ് പ്രസ്ഥാനം ബന്ധപ്പെട്ടിരുന്നു."},{"q_en":"The Attingal Revolt was held in:","q_ml":"ആറ്റിങ്ങൽ കലാപം നടന്ന വർഷം ഏതാണ്?","o":["1741","1761","1781","1721"],"a":3,"e":"ബ്രിട്ടീഷ് ഈസ്റ്റ് ഇന്ത്യാ കമ്പനിക്കെതിരെ കേരളത്തിൽ നടന്ന ആദ്യകാല സംഘടിത പ്രക്ഷോഭങ്ങളിലൊന്നായ ആറ്റിങ്ങൽ കലാപം 1721-ലാണ് നടന്നത്."},{"q_en":"Which of the following cities is the headquarters of ASEAN?","q_ml":"ആസിയാന്റെ ആസ്ഥാനം ഏത് നഗരത്തിലാണ്?","o":["Singapore","Manila","Jakarta","Bangkok"],"a":2,"e":"തെക്കുകിഴക്കൻ ഏഷ്യൻ രാഷ്ട്രങ്ങളുടെ കൂട്ടായ്മയായ ആസിയാന്റെ സെക്രട്ടേറിയറ്റ് ഇന്തോനേഷ്യയിലെ ജക്കാർത്തയിലാണ്."},{"q_en":"India signed the Panchasheel Agreement with:","q_ml":"ഇന്ത്യ പഞ്ചശീല കരാറിൽ ഒപ്പുവെച്ചത് ഏത് രാജ്യവുമായാണ്?","o":["Pakistan","Sri Lanka","China","Nepal"],"a":2,"e":"ഇന്ത്യയും ചൈനയും 1954-ൽ പഞ്ചശീല തത്ത്വങ്ങളുമായി ബന്ധപ്പെട്ട കരാറിൽ ഒപ്പുവെച്ചു."},{"q_en":"Which one of the following is NOT an instrument of monetary policy?","q_ml":"പണനയത്തിന്റെ ഉപകരണമല്ലാത്തത് ഏതാണ്?","o":["Bank rate","Cash Reserve Ratio","Statutory Liquidity Ratio","Taxation"],"a":3,"e":"ബാങ്ക് നിരക്ക്, CRR, SLR എന്നിവ പണനയവുമായി ബന്ധപ്പെട്ട ഉപകരണങ്ങളാണ്. നികുതി ധനനയത്തിന്റെ ഭാഗമാണ്."},{"q_en":"Which of the following is NOT a Directive Principle of State Policy?","q_ml":"രാഷ്ട്രനയ നിർദ്ദേശക തത്ത്വങ്ങളിൽ ഉൾപ്പെടാത്തത് ഏതാണ്?","o":["To provide adequate means of livelihood for all.","To develop a scientific temper.","To separate the Judiciary from the Executive.","To promote International Peace and Security."],"a":1,"e":"ശാസ്ത്രീയ മനോഭാവം വളർത്തുക എന്നത് ഭരണഘടനയുടെ അനുച്ഛേദം 51A പ്രകാരമുള്ള മൗലിക കടമയാണ്."},{"q_en":"The local wind ‘Mango Showers’ is experienced in India during:","q_ml":"ഇന്ത്യയിൽ ‘മാംഗോ ഷവേഴ്സ്’ എന്ന പ്രാദേശിക മഴ അനുഭവപ്പെടുന്ന കാലം ഏതാണ്?","o":["Winter season","South-West Monsoon season","Summer season","North-East Monsoon season"],"a":2,"e":"വേനൽക്കാലത്തിന്റെ അവസാനത്തിൽ, പ്രത്യേകിച്ച് ഏപ്രിൽ–മേയ് മാസങ്ങളിൽ കേരളത്തിലും കർണാടകത്തിലും ലഭിക്കുന്ന മഴയാണ് മാംഗോ ഷവേഴ്സ്."},{"q_en":"Who is the present President of the World Bank?","q_ml":"ലോകബാങ്കിന്റെ പ്രസിഡന്റ് ആരാണ്?","o":["Robert Zoellick","Jim Yong Kim","Ajay Banga","Christine Lagarde"],"a":2,"e":"നൽകിയിരിക്കുന്ന ചോദ്യത്തിന്റെ ഉത്തരസൂചികയിൽ അജയ് ബംഗയാണ് ഉത്തരം."},{"q_en":"The Allahabad Pillar inscription is associated with:","q_ml":"അലഹബാദ് സ്തംഭലിഖിതം ഏത് ഭരണാധികാരിയുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു?","o":["Chandra Gupta I","Chandra Gupta Maurya","Samudra Gupta","Chandra Gupta II"],"a":2,"e":"സമുദ്രഗുപ്തന്റെ സൈനിക വിജയങ്ങളും ഭരണവും വിവരിക്കുന്ന പ്രശസ്തമായ പ്രയാഗ പ്രശസ്തി അലഹബാദ് സ്തംഭവുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു. ഹരിഷേനനാണ് ഇതിന്റെ രചയിതാവ്."},{"q_en":"The process that helps in the formation of landforms is called:","q_ml":"ഭൂപ്രകൃതികൾ രൂപപ്പെടാൻ സഹായിക്കുന്ന പ്രക്രിയ അറിയപ്പെടുന്നത് എന്ത്?","o":["Transpiration process","Condensation process","Geomorphic process","Sublimation process"],"a":2,"e":"ഭൂമിയുടെ ഉപരിതലത്തിൽ ഭൂരൂപങ്ങൾ രൂപപ്പെടുന്നതിനും മാറ്റം സംഭവിക്കുന്നതിനും കാരണമാകുന്ന പ്രക്രിയകളാണ് ഭൗമരൂപീകരണ പ്രക്രിയകൾ."},{"q_en":"Which nation was NOT part of the Axis Powers during World War II?","q_ml":"രണ്ടാം ലോകമഹായുദ്ധത്തിൽ അച്ചുതണ്ട് ശക്തികളിൽ ഉൾപ്പെടാത്ത രാജ്യം ഏതാണ്?","o":["Britain","Germany","Italy","Japan"],"a":0,"e":"ബ്രിട്ടൻ സഖ്യകക്ഷികളുടെ ഭാഗമായിരുന്നു. ജർമ്മനി, ഇറ്റലി, ജപ്പാൻ എന്നിവ പ്രധാന അച്ചുതണ്ട് ശക്തികളായിരുന്നു."},{"q_en":"Identify the inland waterway in India declared as National Waterway 3 (NW3).","q_ml":"ദേശീയ ജലപാത 3 (NW3) ആയി പ്രഖ്യാപിച്ച ഇന്ത്യയിലെ ജലപാത ഏതാണ്?","o":["The west coastal canal in Kerala from Kollam to Kottappuram.","Sadiya to Dhubri in the river Brahmaputra.","Canal from Kakinada to Puducherry linking Godavari and Krishna.","Allahabad to Haldia in the river Ganga."],"a":0,"e":"കേരളത്തിലെ കൊല്ലം മുതൽ കോട്ടപ്പുറം വരെയുള്ള പശ്ചിമതീര കനാൽ ദേശീയ ജലപാത 3-ന്റെ പ്രധാന ഭാഗമാണ്."},{"q_en":"The broad, flat valleys seen along the Siwalik ranges are called:","q_ml":"സിവാലിക് മലനിരകൾക്കരികിലുള്ള വിശാലവും പരന്നതുമായ താഴ്‌വരകൾ അറിയപ്പെടുന്നത് എന്ത്?","o":["Rift valleys","Duns","Passes","U-shaped valleys"],"a":1,"e":"സിവാലിക് മലനിരകൾക്കും ഹിമാലയത്തിലെ ഉയർന്ന മലനിരകൾക്കും ഇടയിൽ കാണപ്പെടുന്ന നീളമേറിയ താഴ്‌വരകളാണ് ഡൂണുകൾ. ഡെറാഡൂൺ ഒരു ഉദാഹരണമാണ്."},{"q_en":"Which among the following is known as the ‘Universal Fibre’?","q_ml":"‘സാർവത്രിക നാര്’ എന്നറിയപ്പെടുന്നത് ഏതാണ്?","o":["Cotton","Jute","Silk","Wool"],"a":0,"e":"വസ്ത്രനിർമാണത്തിൽ വ്യാപകമായി ഉപയോഗിക്കുന്ന പ്രകൃതിദത്ത നാരാണ് പരുത്തി. ഈ ചോദ്യത്തിലെ ഉത്തരസൂചികയിൽ പരുത്തിയെയാണ് സാർവത്രിക നാര് എന്ന് നൽകിയിരിക്കുന്നത്."},{"q_en":"Which of the following statements are correct?","q_ml":"വ്യാപാരസംഘങ്ങളെക്കുറിച്ചുള്ള താഴെപ്പറയുന്നവ ശരിയായി യോജിപ്പിക്കുക.","o":["a-3, b-4, c-2, d-1","a-4, b-1, c-2, d-3","a-3, b-1, c-4, d-2","a-4, b-3, c-1, d-2"],"a":3,"e":"നൽകിയിരിക്കുന്ന ഉത്തരസൂചിക പ്രകാരം മണിഗ്രാമം സിറിയൻ ക്രിസ്ത്യാനികളുമായും അഞ്ചുവണ്ണം ജൂത വ്യാപാരികളുമായും ബന്ധപ്പെട്ടിരിക്കുന്നു. വളഞ്ചിയർ വിദേശ വ്യാപാരവുമായി ബന്ധപ്പെട്ടവരായിരുന്നു."},{"q_en":"Choose the correct statements.","q_ml":"താഴെപ്പറയുന്ന പ്രസ്താവനകളിൽ ശരിയായവ തിരഞ്ഞെടുക്കുക.","o":["(ii), (iii), (iv)","(i), (ii), (iii), (iv)","(i), (ii), (iii)","(i), (ii), (iv)"],"a":0,"e":"“പ്രവർത്തിക്കുക അല്ലെങ്കിൽ മരിക്കുക” എന്ന ഗാന്ധിജിയുടെ ആഹ്വാനം 1942-ലെ ക്വിറ്റ് ഇന്ത്യാ സമരവുമായി ബന്ധപ്പെട്ടതാണ്; നിയമലംഘന സമരവുമായി അല്ല. അതിനാൽ ഒന്നാമത്തെ പ്രസ്താവന തെറ്റാണ്. ## Part 2: Social Science Pedagogy (Questions 121–150)"},{"q_en":"Which of the following is the most appropriate method to teach a sensitive historical topic like communal riots?","q_ml":"വർഗീയ കലാപങ്ങൾ പോലുള്ള സെൻസിറ്റീവായ ചരിത്രവിഷയം പഠിപ്പിക്കാൻ ഏറ്റവും അനുയോജ്യമായ രീതി ഏതാണ്?","o":["Reading from textbook only","Presenting multiple perspectives with empathy","Avoiding the topic altogether","Lecture with one-sided narrative"],"a":1,"e":"വ്യത്യസ്ത വീക്ഷണങ്ങൾ സഹാനുഭൂതിയോടെ അവതരിപ്പിക്കുന്നത് കുട്ടികളിൽ ചരിത്രബോധവും വിമർശനാത്മക ചിന്തയും വളർത്തുന്നു."},{"q_en":"To teach map skills effectively, a teacher should:","q_ml":"ഭൂപട നൈപുണ്യങ്ങൾ ഫലപ്രദമായി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Skip map work","Show maps on screen only","Use blank maps for labeling and interpretation","Ask students to memorize maps"],"a":2,"e":"ശൂന്യഭൂപടങ്ങളിൽ സ്ഥലങ്ങൾ അടയാളപ്പെടുത്തുകയും വിവരങ്ങൾ വ്യാഖ്യാനിക്കുകയും ചെയ്യുന്നത് ഭൂപട നൈപുണ്യങ്ങൾ വളർത്തുന്നു."},{"q_en":"Which activity best promotes critical thinking in Civics?","q_ml":"പൗരശാസ്ത്രത്തിൽ വിമർശനാത്മക ചിന്ത വളർത്താൻ ഏറ്റവും അനുയോജ്യമായ പ്രവർത്തനം ഏതാണ്?","o":["Memorizing articles","Conducting mock parliament","Reading aloud","Copying definitions"],"a":1,"e":"മാതൃകാ പാർലമെന്റ് കുട്ടികൾക്ക് ചർച്ച ചെയ്യാനും അഭിപ്രായങ്ങൾ അവതരിപ്പിക്കാനും ജനാധിപത്യ നടപടികൾ മനസ്സിലാക്കാനും അവസരം നൽകുന്നു."},{"q_en":"A student with visual impairment struggles with geography maps. What is the best accommodation?","q_ml":"കാഴ്ചപരിമിതിയുള്ള ഒരു വിദ്യാർഥിക്ക് ഭൂമിശാസ്ത്ര ഭൂപടങ്ങൾ മനസ്സിലാക്കാൻ ബുദ്ധിമുട്ടുണ്ടെങ്കിൽ ഏറ്റവും അനുയോജ്യമായ പഠനസഹായം ഏതാണ്?","o":["Reduce marks","Provide tactile maps and audio descriptions","Exclude from map work","Give extra homework"],"a":1,"e":"സ്പർശിച്ച് മനസ്സിലാക്കാവുന്ന ഭൂപടങ്ങളും ശബ്ദവിവരണങ്ങളും നൽകുന്നത് കാഴ്ചപരിമിതിയുള്ള കുട്ടികൾക്ക് പഠനം സുഗമമാക്കുന്നു."},{"q_en":"Which teaching strategy is most suitable for teaching democracy as a concept?","q_ml":"ജനാധിപത്യം എന്ന ആശയം പഠിപ്പിക്കാൻ ഏറ്റവും അനുയോജ്യമായ ബോധനതന്ത്രം ഏതാണ്?","o":["Memorization","Role-play and group discussion","Dictating notes","Reading textbook"],"a":1,"e":"റോൾ പ്ലേയും ഗ്രൂപ്പ് ചർച്ചയും വഴി കുട്ടികൾക്ക് ജനാധിപത്യത്തിലെ പങ്കാളിത്തം, അഭിപ്രായസ്വാതന്ത്ര്യം, സഹകരണം എന്നിവ അനുഭവിച്ചറിയാം."},{"q_en":"To make Economics relatable, a teacher should:","q_ml":"സാമ്പത്തികശാസ്ത്രം കുട്ടികളുടെ ദൈനംദിന ജീവിതവുമായി ബന്ധപ്പെടുത്തി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Use real-life examples like market visits","Avoid examples","Focus on definitions only","Teach only theory"],"a":0,"e":"മാർക്കറ്റ് സന്ദർശനം പോലുള്ള യഥാർഥ ജീവിതാനുഭവങ്ങൾ സാമ്പത്തിക ആശയങ്ങൾ എളുപ്പത്തിൽ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"Which of the following is an example of a primary source in History?","q_ml":"ചരിത്രത്തിലെ പ്രാഥമിക സ്രോതസ്സിന് ഉദാഹരണം ഏതാണ്?","o":["Wikipedia","Teacher’s notes","Newspaper article from the time period","Textbook"],"a":2,"e":"ഒരു സംഭവം നടന്ന കാലഘട്ടത്തിൽ പ്രസിദ്ധീകരിച്ച പത്രവാർത്ത ആ കാലത്തെ സംഭവങ്ങളെക്കുറിച്ചുള്ള പ്രാഥമിക സ്രോതസ്സായി ഉപയോഗിക്കാം."},{"q_en":"How can a teacher address gender bias in Social Science textbooks?","q_ml":"സാമൂഹ്യശാസ്ത്ര പാഠപുസ്തകങ്ങളിലെ ലിംഗവിവേചനം അധ്യാപകന് എങ്ങനെ കൈകാര്യം ചെയ്യാം?","o":["Skip those chapters","Highlight and discuss with students","Ignore it","Teach as written"],"a":1,"e":"പാഠപുസ്തകങ്ങളിലെ ലിംഗവിവേചനം തിരിച്ചറിയുകയും ചർച്ച ചെയ്യുകയും ചെയ്യുന്നതിലൂടെ കുട്ടികളിൽ ലിംഗസമത്വബോധം വളർത്താം."},{"q_en":"Which of the following is NOT a suitable assessment method for Social Science?","q_ml":"സാമൂഹ്യശാസ്ത്രത്തിന് അനുയോജ്യമല്ലാത്ത മൂല്യനിർണയ രീതി ഏതാണ്?","o":["Rote memory testing only","Debate on social issues","Map-based questions","Project work"],"a":0,"e":"കാണാപ്പാഠം മാത്രം പരിശോധിക്കുന്നത് കുട്ടികളുടെ വിമർശനാത്മക ചിന്ത, പ്രായോഗിക അറിവ്, പ്രശ്നപരിഹാരശേഷി എന്നിവ വിലയിരുത്താൻ പര്യാപ്തമല്ല."},{"q_en":"To teach the Indian Constitution effectively, a teacher should:","q_ml":"ഇന്ത്യൻ ഭരണഘടന ഫലപ്രദമായി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Skip preambles","Dictate articles","Focus on memorization","Use case studies and real-life examples"],"a":3,"e":"യഥാർഥ ജീവിതത്തിലെ സംഭവങ്ങളും കേസ് പഠനങ്ങളും ഉപയോഗിക്കുന്നത് ഭരണഘടനാ തത്ത്വങ്ങൾ പ്രായോഗികമായി മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"Which of the following is a good way to teach cultural diversity?","q_ml":"സാംസ്കാരിക വൈവിധ്യം പഠിപ്പിക്കുന്നതിനുള്ള നല്ല മാർഗം ഏതാണ്?","o":["Teach one culture only","Celebrate different cultures in class","Avoid discussion","Lecture only"],"a":1,"e":"വിവിധ സംസ്കാരങ്ങളെ പരിചയപ്പെടുത്തുകയും അവയുമായി ബന്ധപ്പെട്ട പ്രവർത്തനങ്ങൾ സംഘടിപ്പിക്കുകയും ചെയ്യുന്നത് പരസ്പര ബഹുമാനം വളർത്തുന്നു."},{"q_en":"A student asks, “Why study history if it has already happened?” How should the teacher respond?","q_ml":"“സംഭവിച്ചുകഴിഞ്ഞ കാര്യങ്ങൾ എന്തിനാണ് ചരിത്രമായി പഠിക്കുന്നത്?” എന്ന് ഒരു വിദ്യാർഥി ചോദിച്ചാൽ അധ്യാപകൻ എങ്ങനെ പ്രതികരിക്കണം?","o":["Say it’s compulsory","Explain relevance to present and future","Punish for questioning","Ignore the question"],"a":1,"e":"ഭൂതകാല സംഭവങ്ങൾ വർത്തമാനകാലത്തെ മനസ്സിലാക്കാനും ഭാവിയിലെ തീരുമാനങ്ങൾ എടുക്കാനും സഹായിക്കുന്നുവെന്ന് അധ്യാപകൻ വിശദീകരിക്കണം."},{"q_en":"Which of the following is a suitable activity for teaching local self-government?","q_ml":"പ്രാദേശിക സ്വയംഭരണം പഠിപ്പിക്കാൻ അനുയോജ്യമായ പ്രവർത്തനം ഏതാണ്?","o":["Memorizing names","Reading textbook","Visiting local panchayat office","Skipping topic"],"a":2,"e":"പഞ്ചായത്ത് ഓഫീസ് സന്ദർശിക്കുന്നതിലൂടെ പ്രാദേശിക ഭരണസ്ഥാപനങ്ങളുടെ പ്രവർത്തനം നേരിട്ട് മനസ്സിലാക്കാം."},{"q_en":"How can geography field trips be made inclusive?","q_ml":"ഭൂമിശാസ്ത്ര ഫീൽഡ് ട്രിപ്പുകൾ എല്ലാ കുട്ടികൾക്കും പങ്കെടുക്കാൻ കഴിയുന്ന രീതിയിൽ എങ്ങനെ സംഘടിപ്പിക്കാം?","o":["Plan accessible locations and activities","Avoid field trips","Make it optional","Exclude students with disabilities"],"a":0,"e":"ഭിന്നശേഷിയുള്ള കുട്ടികൾ ഉൾപ്പെടെ എല്ലാവർക്കും പങ്കെടുക്കാൻ കഴിയുന്ന സ്ഥലങ്ങളും പ്രവർത്തനങ്ങളും തിരഞ്ഞെടുക്കണം."},{"q_en":"Which is a good way to assess students’ understanding of social justice?","q_ml":"സാമൂഹികനീതിയെക്കുറിച്ചുള്ള കുട്ടികളുടെ ധാരണ വിലയിരുത്താൻ അനുയോജ്യമായ മാർഗം ഏതാണ്?","o":["No assessment","Memorization of terms","Essay on real-life examples","Objective test only"],"a":2,"e":"യഥാർഥ ജീവിതത്തിലെ ഉദാഹരണങ്ങളെ അടിസ്ഥാനമാക്കി ഉപന്യാസം തയ്യാറാക്കുന്നത് സാമൂഹികനീതിയെക്കുറിച്ചുള്ള കുട്ടികളുടെ ധാരണയും വിശകലനശേഷിയും വിലയിരുത്താൻ സഹായിക്കുന്നു."},{"q_en":"To teach globalization effectively, a teacher should:","q_ml":"ആഗോളവൽക്കരണം ഫലപ്രദമായി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Use news articles and case studies","Teach only theory","Focus on definitions","Avoid examples"],"a":0,"e":"വാർത്തകളും കേസ് പഠനങ്ങളും ഉപയോഗിക്കുന്നത് ആഗോളവൽക്കരണത്തിന്റെ സാമ്പത്തികവും സാമൂഹികവുമായ പ്രത്യാഘാതങ്ങൾ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"Which is a suitable method for teaching environmental studies in Social Science?","q_ml":"സാമൂഹ്യശാസ്ത്രത്തിൽ പരിസ്ഥിതി പഠനം പഠിപ്പിക്കാൻ അനുയോജ്യമായ രീതി ഏതാണ്?","o":["Skipping topic","Memorization of facts","Lecture only","Project-based learning on local issues"],"a":3,"e":"മാലിന്യസംസ്കരണം, ജലസംരക്ഷണം തുടങ്ങിയ പ്രാദേശിക പ്രശ്നങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ള പ്രോജക്റ്റുകൾ പരിസ്ഥിതി ബോധം വളർത്തുന്നു."},{"q_en":"A student struggles with understanding timelines. What is the best strategy?","q_ml":"ചരിത്രസംഭവങ്ങളുടെ കാലക്രമം മനസ്സിലാക്കാൻ ഒരു വിദ്യാർഥിക്ക് ബുദ്ധിമുട്ടുണ്ടെങ്കിൽ ഏറ്റവും അനുയോജ്യമായ പഠനതന്ത്രം ഏതാണ്?","o":["Punish for mistakes","Use visual aids and interactive timelines","Ignore timelines","Skip history"],"a":1,"e":"ചിത്രസഹായങ്ങളും സംവേദനാത്മക ടൈംലൈനുകളും ഉപയോഗിക്കുന്നത് ചരിത്രസംഭവങ്ങളുടെ ക്രമവും കാലബന്ധവും മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"Which is a good way to teach human rights?","q_ml":"മനുഷ്യാവകാശങ്ങൾ പഠിപ്പിക്കുന്നതിനുള്ള നല്ല മാർഗം ഏതാണ്?","o":["Memorization","Avoid discussion","Role-play and case studies","Dictate articles"],"a":2,"e":"റോൾ പ്ലേയും കേസ് പഠനങ്ങളും ഉപയോഗിക്കുന്നത് മനുഷ്യാവകാശങ്ങളുടെ പ്രാധാന്യവും ലംഘനങ്ങളുടെ പ്രത്യാഘാതങ്ങളും മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"To teach economic development effectively, a teacher should:","q_ml":"സാമ്പത്തിക വികസനം ഫലപ്രദമായി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Avoid examples","Teach only theory","Use case studies of different countries","Focus on statistics only"],"a":2,"e":"വിവിധ രാജ്യങ്ങളുടെ വികസന മാതൃകകൾ താരതമ്യം ചെയ്യുന്നതിലൂടെ സാമ്പത്തിക വികസനത്തിന്റെ വ്യത്യസ്ത വശങ്ങൾ മനസ്സിലാക്കാം."},{"q_en":"Which is a suitable activity for teaching cultural heritage?","q_ml":"സാംസ്കാരിക പൈതൃകം പഠിപ്പിക്കാൻ അനുയോജ്യമായ പ്രവർത്തനം ഏതാണ്?","o":["Memorizing names","Visiting heritage sites or virtual tours","Reading textbook","Skipping topic"],"a":1,"e":"പൈതൃകകേന്ദ്രങ്ങൾ നേരിട്ട് സന്ദർശിക്കുന്നതോ വെർച്വൽ ടൂറുകൾ ഉപയോഗിക്കുന്നതോ ചരിത്രസ്മാരകങ്ങളെയും സാംസ്കാരിക പൈതൃകത്തെയും അടുത്തറിയാൻ സഹായിക്കുന്നു."},{"q_en":"How can a teacher address students’ misconceptions in Social Science?","q_ml":"സാമൂഹ്യശാസ്ത്രത്തിൽ കുട്ടികൾക്കുള്ള തെറ്റായ ധാരണകൾ അധ്യാപകൻ എങ്ങനെ തിരുത്തണം?","o":["Punish for wrong answers","Avoid discussion","Ignore them","Discuss and clarify with evidence"],"a":3,"e":"കുട്ടികളുടെ തെറ്റായ ധാരണകൾ തെളിവുകളും യുക്തിപരമായ ചർച്ചകളും ഉപയോഗിച്ച് തിരുത്തുന്നതാണ് ഉചിതമായ ബോധനരീതി."},{"q_en":"Which is a good way to teach political parties?","q_ml":"രാഷ്ട്രീയ പാർട്ടികളെ പഠിപ്പിക്കുന്നതിനുള്ള നല്ല മാർഗം ഏതാണ്?","o":["Avoid discussion","Memorization","Conduct mock elections","Dictate notes"],"a":2,"e":"മാതൃകാ തിരഞ്ഞെടുപ്പുകൾ സംഘടിപ്പിക്കുന്നത് രാഷ്ട്രീയ പാർട്ടികളുടെ പങ്ക്, തിരഞ്ഞെടുപ്പ് പ്രക്രിയ, ജനാധിപത്യത്തിലെ വോട്ടിന്റെ പ്രാധാന്യം എന്നിവ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"To teach urbanization effectively, a teacher should:","q_ml":"നഗരവൽക്കരണം ഫലപ്രദമായി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Avoid examples","Teach only theory","Use case studies of cities","Focus on definitions"],"a":2,"e":"വിവിധ നഗരങ്ങളെക്കുറിച്ചുള്ള പഠനങ്ങൾ ഉപയോഗിക്കുന്നത് നഗരവൽക്കരണത്തിന്റെ കാരണങ്ങൾ, ഗുണങ്ങൾ, പ്രശ്നങ്ങൾ എന്നിവ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"Which is a suitable method for teaching social movements?","q_ml":"സാമൂഹിക പ്രസ്ഥാനങ്ങൾ പഠിപ്പിക്കാൻ അനുയോജ്യമായ രീതി ഏതാണ്?","o":["Skipping topic","Memorization of names","Case studies and role-play","Lecture only"],"a":2,"e":"സാമൂഹിക പ്രസ്ഥാനങ്ങളുടെ ലക്ഷ്യങ്ങൾ, പ്രവർത്തനരീതികൾ, പ്രത്യാഘാതങ്ങൾ എന്നിവ കേസ് പഠനങ്ങളിലൂടെയും റോൾ പ്ലേയിലൂടെയും മനസ്സിലാക്കാം."},{"q_en":"A student asks, “Why learn about other countries?” How should the teacher respond?","q_ml":"“മറ്റു രാജ്യങ്ങളെക്കുറിച്ച് എന്തിനാണ് പഠിക്കുന്നത്?” എന്ന് ഒരു വിദ്യാർഥി ചോദിച്ചാൽ അധ്യാപകൻ എന്തു വിശദീകരിക്കണം?","o":["Punish for questioning","Explain global interconnectedness","Ignore the question","Say it’s compulsory"],"a":1,"e":"രാജ്യങ്ങൾ തമ്മിലുള്ള വ്യാപാരം, സംസ്കാരം, പരിസ്ഥിതി, രാഷ്ട്രീയം തുടങ്ങിയ ബന്ധങ്ങൾ നമ്മുടെ ജീവിതത്തെ സ്വാധീനിക്കുന്നുവെന്ന് വിശദീകരിക്കണം."},{"q_en":"Which is a good way to assess students’ understanding of map skills?","q_ml":"ഭൂപട നൈപുണ്യങ്ങളെക്കുറിച്ചുള്ള കുട്ടികളുടെ ധാരണ വിലയിരുത്താൻ ഏറ്റവും നല്ല മാർഗം ഏതാണ്?","o":["No assessment","Memorization of locations","Objective test only","Practical map-based tasks"],"a":3,"e":"ഭൂപടത്തിൽ സ്ഥലങ്ങൾ കണ്ടെത്തുക, അടയാളപ്പെടുത്തുക, ചിഹ്നങ്ങൾ വ്യാഖ്യാനിക്കുക തുടങ്ങിയ പ്രായോഗിക പ്രവർത്തനങ്ങളിലൂടെ ഭൂപട നൈപുണ്യങ്ങൾ വിലയിരുത്താം."},{"q_en":"To teach consumer rights effectively, a teacher should:","q_ml":"ഉപഭോക്തൃ അവകാശങ്ങൾ ഫലപ്രദമായി പഠിപ്പിക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Teach only theory","Focus on definitions","Use real-life examples and case studies","Avoid examples"],"a":2,"e":"ഉപഭോക്തൃ തർക്കങ്ങൾ, തെറ്റായ പരസ്യങ്ങൾ, ഗുണനിലവാരമില്ലാത്ത ഉൽപ്പന്നങ്ങൾ തുടങ്ങിയ യഥാർഥ ഉദാഹരണങ്ങൾ ഉപയോഗിക്കുന്നത് ഉപഭോക്തൃ അവകാശങ്ങൾ മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"Which is a suitable activity for teaching natural resources?","q_ml":"പ്രകൃതിവിഭവങ്ങൾ പഠിപ്പിക്കുന്നതിനുള്ള അനുയോജ്യമായ പ്രവർത്തനം ഏതാണ്?","o":["Memorizing names","Skipping topic","Field visit to resource site","Reading textbook"],"a":2,"e":"പ്രകൃതിവിഭവങ്ങൾ ലഭിക്കുന്ന സ്ഥലങ്ങൾ സന്ദർശിക്കുന്നത് അവയുടെ ഉപയോഗം, പ്രാധാന്യം, സംരക്ഷണത്തിന്റെ ആവശ്യകത എന്നിവ നേരിട്ട് മനസ്സിലാക്കാൻ സഹായിക്കുന്നു."},{"q_en":"How can a teacher make Social Science inclusive for students with learning disabilities?","q_ml":"പഠനവൈകല്യമുള്ള കുട്ടികൾക്ക് സാമൂഹ്യശാസ്ത്ര പഠനം ഉൾക്കൊള്ളുന്നതും ഫലപ്രദവുമാക്കാൻ അധ്യാപകൻ എന്തുചെയ്യണം?","o":["Exclude from class","Reduce expectations","Differentiate instruction and use multisensory materials","Use one teaching method"],"a":2,"e":""}];
+
+const KEYS = ['A', 'B', 'C', 'D'];
+let ans = new Array(Q.length).fill(-1);
+let done = new Array(Q.length).fill(false);
+
+let globalTimeLeft = 3600; // 60 minutes for 50 questions 
+let globalTmr = null;
+
+function startGlobalTimer(){
+  if(globalTmr) return; 
+  updTimerDisplay();
+  globalTmr = setInterval(() => {
+    globalTimeLeft--;
+    updTimerDisplay();
+    if(globalTimeLeft <= 0){
+      clearInterval(globalTmr);
+      globalTmr = null;
+      showResults();
+    }
+  }, 1000);
+}
+
+function updTimerDisplay(){
+  const el = document.getElementById('tmr');
+  if(!el) return;
+  const mins = Math.floor(globalTimeLeft / 60);
+  const secs = globalTimeLeft % 60;
+  el.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+  if(globalTimeLeft <= 120){
+    el.className = 'timer-txt red';
+  } else {
+    el.className = 'timer-txt';
+  }
+}
+
+function renderAllQuestions(){
+  let html = `
+  <div class="top-bar">
+    <div class="header-profile">
+      <div class="header-text-block">
+        <span class="quiz-title">K-TET SOCIAL SCIENCE CATEGORY III – SET 3</span>
+        <span class="quiz-subtitle">Questions 71–150 | English & Malayalam</span>
+        <div style="margin-top: 2px;"><a href="https://guruplusblog.blogspot.com/" target="_blank" style="color: #93C5FD; font-size: 11px; font-weight: 600; text-decoration: none; word-break: break-all;">https://guruplusblog.blogspot.com/</a></div>
+      </div>
+      <div class="header-actions">
+        <a href="https://wa.me/919539846888" target="_blank" class="whatsapp-btn">
+          WhatsApp
+        </a>
+        <img src="myphoto.jpeg" alt="Profile" class="profile-pic" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="top-row" style="margin-top: 10px;">
+      <div class="timer-pill">
+        <span class="timer-label" style="margin-right:4px;">Time Left:</span>
+        <span class="timer-txt" id="tmr">40:00</span>
+      </div>
+      <span class="q-badge">Total: ${Q.length}</span>
+    </div>
+  </div>`;
+
+  Q.forEach((q, qIdx) => {
+    const isD = done[qIdx];
+    const ua = ans[qIdx];
+
+    let optsHtml = q.o.map((o, oIdx) => {
+      let cls = 'opt';
+      if (isD) {
+        if (oIdx === q.a) cls += ' correct-ans';
+        else if (oIdx === ua) cls += ' wrong-ans';
+        else cls += ' neutral-locked';
+      } else {
+        cls += ' unanswered';
+      }
+      return `<div class="${cls}" onclick="pick(${qIdx}, ${oIdx})"><span class="opt-key ${KEYS[oIdx]}">${KEYS[oIdx]}</span><span class="opt-txt">${o}</span></div>`;
+    }).join('');
+
+    let expHtml = '';
+    if (isD) {
+      const ok = ua === q.a;
+      expHtml = `<div class="exp-box ${ok ? 'correct' : 'wrong'}"><div class="exp-label">${ok ? '✓ Correct!' : '✗ Incorrect'}</div>${q.e}</div>`;
+    }
+
+    html += `
+    <div class="q-container" id="q-box-${qIdx}">
+      <div class="q-num">Question ${qIdx + 1}</div>
+      <div class="q-text-en">${q.q_en.replace(/\n/g, '<br>')}</div>
+      <div class="q-text-ml">${q.q_ml}</div>
+      <div class="opts">${optsHtml}</div>
+      ${expHtml}
+    </div>`;
+  });
+
+  html += `
+  <div class="action-container">
+    <button class="btn-submit-all" onclick="showResults()">Submit Test</button>
+  </div>`;
+
+  document.getElementById('app').innerHTML = html;
+  updTimerDisplay();
+}
+
+function pick(qIdx, oIdx){
+  if(done[qIdx]) return;
+  ans[qIdx] = oIdx;
+  done[qIdx] = true;
+
+  const q = Q[qIdx];
+  const ua = ans[qIdx];
+  const ok = ua === q.a;
+
+  if (ok) {
+    playCorrectSound();
+  }
+
+  const qBox = document.getElementById(`q-box-${qIdx}`);
+  if(qBox) {
+    let optsHtml = q.o.map((o, idx) => {
+      let cls = 'opt';
+      if (idx === q.a) cls += ' correct-ans';
+      else if (idx === ua) cls += ' wrong-ans';
+      else cls += ' neutral-locked';
+      return `<div class="${cls}" onclick="pick(${qIdx}, ${idx})"><span class="opt-key ${KEYS[idx]}">${KEYS[idx]}</span><span class="opt-txt">${o}</span></div>`;
+    }).join('');
+
+    let expHtml = `<div class="exp-box ${ok ? 'correct' : 'wrong'}"><div class="exp-label">${ok ? '✓ Correct!' : '✗ Incorrect'}</div>${q.e}</div>`;
+
+    qBox.innerHTML = `
+      <div class="q-num">Question ${qIdx + 1}</div>
+      <div class="q-text-en">${q.q_en.replace(/\n/g, '<br>')}</div>
+      <div class="q-text-ml">${q.q_ml}</div>
+      <div class="opts">${optsHtml}</div>
+      ${expHtml}
+    `;
+  }
+}
+
+function showResults(){
+  if(globalTmr) {
+    clearInterval(globalTmr);
+    globalTmr = null;
+  }
+  let c=0, w=0, s=0;
+  ans.forEach((a, i) => { if(a === -1) s++; else if(a === Q[i].a) c++; else w++; });
+  const pct = Math.round((c / Q.length) * 100);
+  const grade = pct >= 80 ? 'Excellent!' : pct >= 60 ? 'Good effort!' : pct >= 40 ? 'Keep practising' : 'Keep going!';
+
+  let rev = Q.map((q, i) => {
+    const ua = ans[i], isC = ua === q.a, isS = ua === -1;
+    const rc = isS ? 'rs' : isC ? 'rc' : 'rw';
+    const bl = isS ? 'Skipped' : isC ? 'Correct' : 'Wrong';
+    return `<div class="r-card ${rc}">
+      <div class="r-head"><span class="r-badge ${rc}">${bl}</span><span class="r-head"> Q${i+1}</span></div>
+      <div class="r-qtxt-en">${q.q_en.replace(/\n/g, '<br>')}</div>
+      <div class="q-text-ml">${q.q_ml}</div>
+      ${!isS && !isC ? `<div class="r-ans wrong">Your answer: ${KEYS[ua]}. ${q.o[ua]}</div>` : ''}
+      <div class="r-ans correct">Correct: ${KEYS[q.a]}. ${q.o[q.a]}</div>
+      <div class="r-exp">${q.e}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('app').innerHTML = `
+  <div class="result-top">
+    <div class="score-ring"><span class="score-big">${c}</span><span class="score-sub">/ ${Q.length}</span></div>
+    <div class="result-label">${grade}</div>
+    <div class="result-sub">${pct}% · ${c} correct out of ${Q.length}</div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-c green"><div class="stat-n">${c}</div><div class="stat-l">Correct</div></div>
+    <div class="stat-c red"><div class="stat-n">${w}</div><div class="stat-l">Wrong</div></div>
+    <div class="stat-c gray"><div class="stat-n">${s}</div><div class="stat-l">Skipped</div></div>
+  </div>
+  <div class="review-title">Full review</div>
+  ${rev}
+  <button class="restart-btn" onclick="restartQuiz()">Restart quiz</button>`;
+  window.scrollTo(0,0);
+}
+
+function restartQuiz(){
+  ans = new Array(Q.length).fill(-1);
+  done = new Array(Q.length).fill(false);
+  globalTimeLeft = 2400;
+  startGlobalTimer();
+  renderAllQuestions();
+  window.scrollTo(0,0);
+}
+
+startGlobalTimer();
+renderAllQuestions();
+</script>
+
+</body>
+</html>
